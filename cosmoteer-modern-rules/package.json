@@ -1,0 +1,25 @@
+{
+  "name": "cosmoteer-modern-rules",
+  "displayName": "cosmoteer-modern-rules",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "rules",
+      "aliases": ["Cosmoteer Rules", "rules"],
+      "extensions": [".rules"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "rules",
+      "scopeName": "cosmoteer.rules",
+      "path": "./syntaxes/rules.tmLanguage.json"
+    }]
+  }
+}
