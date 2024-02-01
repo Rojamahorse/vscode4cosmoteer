@@ -1,0 +1,49 @@
+{
+	"name": "cosmoteer-modern-rules",
+	"publisher": "Rojamahorse",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://store.steampowered.com/app/799600/Cosmoteer_Starship_Architect__Commander/"
+	},
+	"displayName": "Cosmoteer-Modern-Rules",
+	"description": "Language support for the Cosmoteer .rules file.",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.72.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cosmoteer-modern-rules",
+				"aliases": [
+					"Cosmoteer Rules for Modern",
+					"cosmoteer-modern-rules"
+				],
+				"extensions": [
+					".rules"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cosmoteer-modern-rules",
+				"scopeName": "source.rules",
+				"path": "./syntaxes/cosmoteer-modern-rules.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "",
+		"publisherId": "",
+		"publisherDisplayName": "Rojamahorse",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 
+	}
+}
