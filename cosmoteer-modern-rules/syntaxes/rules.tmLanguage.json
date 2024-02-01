@@ -1,32 +1,110 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Cosmoteer Rules",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.rules",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.rules",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.rules",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "cosmoteer.rules"
+	"name": "Cosmoteer Modern Rules",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "comment": "Highlighting for blocks defined by curly braces {}",
+            "name": "meta.block.cosmoteer-rules",
+            "begin": "\\{",
+            "end": "\\}",
+            "patterns": [
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#comment"
+                }
+            ]
+        },
+        {
+            "comment": "Highlighting for lists or arrays defined by square brackets []",
+            "name": "meta.array.cosmoteer-rules",
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#comment"
+                }
+            ]
+        },
+        {
+            "comment": "Highlighting for inheritance or includes",
+            "name": "entity.name.include.cosmoteer-rules",
+            "match": "<\\.\\/.*>"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.cosmoteer-rules",
+                    "match": "\\b(Overrides|OverrideIn|Replace|With|Add|AddMany|AddBase|ToAdd|ManyToAdd|BaseToAdd|AddTo|AddBaseTo|Remove|RemoveMany|Multiply|Divide|Max|Min)\\b"
+                },
+                {
+                    "name": "keyword.operator",
+                    "match": "\\b(and|or|deg|\\+|-|=|,|;|\\*|/)\\b"
+                },
+                {
+                    "name": "keyword.other",
+                    "match": "\\b(Action|CreateIfNotExisting|IgnoreIfNotExisting|OnlyIfNotExisting)\\b"
+                },
+                {
+                    "name": "constant.language",
+                    "match": "\\b(true|false|all|none|Up|Down|Left|Right|Top|Bottom|TopLeft|TopRight|BottomLeft|BottomRight|Rot)\\b"
+                },
+                {
+                    "name": "constant.numeric",
+                    "match": "\\b-?\\d*\\.?\\d+[d|%]?\\b"
+                },
+                {
+                    "name": "entity.name.function",
+                    "match": "&[\\w\\.\\^\\d/~<>]+\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.cosmoteer-rules",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.cosmoteer-rules",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash",
+                    "begin": "//",
+                    "end": "$"
+                },
+                {
+                    "name": "comment.block",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        }
+    },
+	"scopeName": "source.rules"
 }

@@ -1,8 +1,14 @@
 {
   "name": "cosmoteer-modern-rules",
-  "displayName": "cosmoteer-modern-rules",
-  "description": "",
-  "version": "0.0.1",
+	"publisher": "Rojamahorse",
+	"icon": "icon.png",
+"repository": {
+		"type": "git",
+		"url": "https://github.com/Rojamahorse/vscode4cosmoteer/tree/main/rojamahorse.cosmoteer-modern-rules-1.0/"
+	},
+	"displayName": "Cosmoteer-Modern-Rules",
+  "description": "Language support for the Cosmoteer .rules file.",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.86.0"
   },
@@ -17,8 +23,8 @@
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "rules",
-      "scopeName": "cosmoteer.rules",
+      "language": "cosmoteer-modern-rules",
+      "scopeName": "source.rules",
       "path": "./syntaxes/rules.tmLanguage.json"
     }]
   }
